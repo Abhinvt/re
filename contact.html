@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact Us</title>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script src="contact.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "qRlTZjt4b_fDg0r3J",
+      });
+   })();
+</script>
+<style type="text/css">
+*{
+ 
+  box-sizing:border-box;
+}
+body {
+  background: #EBEBEB;
+  min-height: 100vh;
+  width:100%;
+  font-family: 'Poppins', sans-serif;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+} 
+.form {
+  position: relative;
+  display: flex;
+  align-items:;
+  flex-direction: column;
+  margin:auto;
+  gap: 10px;
+  width: 600px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 30px 30px -30px rgba(27, 26, 26, 0.315);
+}
+@media screen and (max-width: 768px){
+	.form {
+  	width: 90%;
+	}
+}
+
+.form input {
+  margin-bottom: 20px;
+  outline: 0;
+  border: 1px solid rgb(219, 213, 213);
+  padding: 8px 14px;
+  border-radius: 15px;
+  width: 100%;
+  height: 50px;
+}
+
+.form textarea {
+  border-radius: 8px;
+  height: 100px;
+  width: 100%;
+  resize: none;
+  outline: 0;
+  padding: 8px 14px;
+  border: 1px solid rgb(219, 213, 213);
+}
+
+.form button {
+  align-self: flex-end;
+  padding: 8px;
+  outline: 0;
+  border: 0;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: royalblue;
+  color: #fff;
+  cursor: pointer;
+}
+    
+</style>
+</head>
+<body>
+<form class="form" onsubmit="Send(); reset(); return false;">
+    <div class="title">Contact us</div>
+    <input type="text" id="Name"  placeholder="Your Name"  required>
+    <input type="text" id="phone"  placeholder="Phone"  required>
+    <input type="email" id="email"  placeholder="Email"  required>
+    <textarea placeholder="Your message" id="message" required></textarea>
+    <button type="submit" onclick="eReply()">Submit</button>
+</form>
+
+<script type="text/javascript">
+  function Send(){
+
+    Email.send({
+      SecureToken :"775bd6d8-36da-4362-9ea9-e00d8118604f",
+      To : 'atkeys7@gmail.com',
+      From :"admin@notifies.site",
+      Subject : "New Contact",
+      Body : "<br/> <br/> Name: " + document.getElementById("Name").value + "<br/><br/> Phone No: " + document.getElementById("phone").value + "<br/> <br/> Email Id: " + document.getElementById("email").value + "<br/> <br/> Message: " + document.getElementById("message").value 
+
+      })
+
+    .then(
+      message => {
+        if (message==='OK') {
+          swal("Thanks", "We Will Reach To You Soon", "success");
+        }
+      }
+    );
+  }
+  /*function eReply(){
+  
+  var inputt = {
+  Name: document.getElementById("Name").value,
+  phone: document.getElementById("phone").value,
+  email: document.getElementById("email").value,
+  message: document.getElementById("message").value
+  }
+  
+ emailjs.send('service_bjy4iew', 'emplate_ne4nmtm', inputt).then(
+ (response) => {
+ console.log('SUCCESS!', response.status, response.text);
+ },
+ (error) => {
+ console.log('FAILED...', error);
+ },
+ );
+  }*/
+</script>
+</body>
+</html>
