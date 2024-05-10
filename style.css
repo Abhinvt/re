@@ -5,7 +5,7 @@
 	
 }
 
-*{
+{
  
   box-sizing:border-box;
 }
@@ -31,24 +31,37 @@ body {
 
 .nav > .nav-header > .nav-title {
   display: inline-block;
-  font-size: 22px;
+  font-size: 30px;
   color: #ffff;
   padding: 10px 10px 10px 10px;
+  margin-left:20px; 
 }
-
+@media (max-width:728px){
+  .nav > .nav-header > .nav-title{
+     margin-left:5px;
+  	 font-size:25px;
+  }
+}
 .nav > .nav-btn {
   display: none;
 }
 
+@media (min-width:1137px){
+.nav > .nav-links {
+  margin-left: 22%;
+  display: inline;
+  font-size: 18px;
+}
+}
+@media (max-width:1028px){
 .nav > .nav-links {
   display: inline;
   font-size: 18px;
 }
-
+}
 .nav > .nav-links > a {
-  
   display: inline-block;
-  padding: 13px 10px 13px 10px;
+  padding: 17px 10px 10px 1px;
   text-decoration: none;
   color: #ffff;
 }
@@ -63,7 +76,7 @@ body {
   display: none;
 }
 
-@media (max-width:600px) {
+@media (max-width:1000px) {
   .nav > .nav-btn {
     height:100%;
  	background-color:;
@@ -491,6 +504,8 @@ body {
 }
 .card-container::-webkit-scrollbar {
   width: 10px;
+  height: 15px;
+  border-radius: 10px;
 }
 
 /* Track */
@@ -501,6 +516,7 @@ body {
 /* Handle */
 .card-container::-webkit-scrollbar-thumb {
   background: #888; 
+  border-radius: 10px;
 }
 
 /* Handle on hover */
@@ -821,3 +837,106 @@ button:hover .button-text {
 button:active .button-text {
   color: rgba(255, 255, 255, 0.459);
 }
+
+
+.whyus{
+  text-align: center;
+  align-content: center;  
+  font-weight: #00A1FF600px;
+}
+.whyus .carder-container {
+  display: inline-flex;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  scroll-snap-type: x mandatory; /* Snap to each card */
+  padding-bottom: 20px;
+
+  }
+@media screen and (max-width: 400px){
+  .whyus .carder-container {
+    display: block;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    scroll-snap-type: x mandatory; /* Snap to each card */
+    padding-bottom: 20px; /* Add some space for the scrollbar */
+  }
+}
+
+
+.carder {
+  margin-top: 10px;
+  margin-left: 20px;
+  border-radius:30px;
+  width:20rem;
+  height: 13rem;
+  transition: all .5s;
+  box-shadow: 15px 15px 30px rgba(25, 25, 25, 0.11),
+  -15px -15px 30px rgba(60, 60, 60, 0.082);
+  text-align: center;
+  overflow: hidden; 
+  }
+  
+  .carder:hover {
+  height: 24rem;
+  background: white;
+  }
+  
+  .carder .headerer {
+  height: 13rem;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #212121;
+  margin-bottom: 16px;
+  }
+  
+  .carder .headerer .img-boxer {
+  width: 100px;
+  }
+  
+  .carder .headerer .titleer {
+  font-size: 2em;
+  letter-spacing: .1em;
+  font-weight: 900;
+  text-transform: uppercase;
+  padding: 4px 0 14px 0;
+  transition: all .5s;
+  color: #edededc5;
+  }
+  
+  .carder:hover .headerer {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 96%);
+  }
+  
+  .carder:hover .carder .headerer .titleer {
+  padding: 0;
+  }
+  
+  .carder .contenter {
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  display: block;
+  text-align: left;
+  color: #212121;
+  margin: 0 18px;
+  }
+  
+  .carder .contenter p {
+  transition: all .5s;
+  font-size: .8em;
+  margin-bottom: 8px;
+  }
+  
+  .carder .contenter a {
+  color: #00A1FF;
+  cursor: pointer;
+  transition: all .5s;
+  font-size: .7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  }
+  
+  .carder .contenter .btn-linker:hover {
+  border-bottom: 1px solid #00A1FF;
+  }
