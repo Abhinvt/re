@@ -7,7 +7,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css">
-         <link rel="stylesheet" href="style.css">
+     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+     <script src="https://smtpjs.com/v3/smtp.js"></script>
+     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+     <script type="text/javascript">
+     (function(){
+     emailjs.init({
+     publicKey: "qRlTZjt4b_fDg0r3J",
+     });
+     })();
+     </script>
+     <link rel="stylesheet" href="style.css">
 </head>
 <body> 
 <!--NAV BAR -->
@@ -140,7 +150,7 @@
 	</div>
     </section>
     <section class="product" id="product">
-     <h2><b>Our Products</b></h2>
+     <h2 class="section-title"><b>Our Products</b></h2>
      <br>
      <div class="card-container">
 		<div class="card">
@@ -148,7 +158,7 @@
 		
 		</div>
 		<div class="details">
-		<h4><b>Service</b></h4>
+		<h4><b>Product</b></h4>
 		<p>
 		 	Advising clients on energy-saving measures, sustainable design practices, and renewable energy integration to minimize environmental impact and reduce operating costs.
 		<br>
@@ -162,7 +172,7 @@
 		<div class="remove-when-use1">
 		</div>
 		<div class="details">
-		<h4><b>Service</b></h4>
+		<h4><b>Product</b></h4>
 		<p>
 		Advising clients on energy-saving measures, sustainable design practices, and renewable energy integration to minimize environmental impact and reduce operating costs.
 		<br>		
@@ -175,7 +185,7 @@
 		<div class="remove-when-use2">
 		</div>
 		<div class="details">
-		<h4><b>Service</b></h4>
+		<h4><b>Product</b></h4>
 		<p>
 		Advising clients on energy-saving measures, sustainable design practices, and renewable energy integration to minimize environmental impact and reduce operating costs.
 		<br>		
@@ -188,7 +198,7 @@
 		<div class="remove-when-use3">
 		</div>
 		<div class="details">
-		<h4><b>Service</b></h4>
+		<h4><b>Product</b></h4>
 		<p>
 		Advising clients on energy-saving measures, sustainable design practices, and renewable energy integration to minimize environmental impact and reduce operating costs.
 		<br>		
@@ -201,7 +211,7 @@
 		<div class="remove-when-use4">
 		</div>
 		<div class="details">
-		<h4><b>Service</b></h4>
+		<h4><b>Product</b></h4>
 		<p>
 		Advising clients on energy-saving measures, sustainable design practices, and renewable energy integration to minimize environmental impact and reduce operating costs.
 		<br>		
@@ -215,7 +225,7 @@
     <br>
     <!------------------------------------------------------>
 	<section class="more" id="services">
-		<h2><b>Our Services</b></h2>
+		<h2 class="section-title"><b>Our Services</b></h2>
 		<br>
 		<div class="card-containerr">
 		<div class="card">
@@ -360,7 +370,7 @@
 	</section>
 	
 	<section class="whyus">
-		<h2><b>Why Choose Us</b></h2>
+		<h2 class ="section-title"><b>Why Choose Us</b></h2>
 		<br>
 	
   <div class="carder-container">
@@ -411,6 +421,10 @@
     </div>
     </div>
 </div>
+</div>
+</div>
+</section>
+<section class="whyus">
 	<div class="carder-container">
 	<div>
 	<div class="carder">
@@ -437,9 +451,73 @@
 	</div>
 	</div>
 	</div>
+	</div>
 	</section>
-    <i>The Site is under development and the following section is remaining.</i>
-           
+	<br>
+	<br>
+    <div class="end"></div>
+		
+	<footer class="new_footer_area bg_color">
+	<div class="new_footer_top">
+	<div class="container">
+	<div class="row">
+	<div class="col-lg-3 col-md-6">
+	<div class="f_widget company_widget wow fadeInLeft" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;">
+	<h2 class="f-title f_600 t_color ">Get in Touch</h2>
+	<p>If any query don't hesitate to contact us</p>
+	<form class="f_subscribe_two mailchimp" onsubmit="Send(); reset(); return false;">
+	<input type="text" name="Name" class="form-control memail" placeholder="Name" id="Name" required>
+	<input type="text" name="Phone" class="form-control memail" placeholder="Phone" id="phone" required>
+	<input type="email" name="Email" class="form-control memail" placeholder="Email" id="email" required>
+	<textarea class="form-control memail" rows="4" placeholder="Message" id="message" required></textarea>
+	<button class="btn btn_get btn_get_two" type="submit" onclick="eReply()">Subscribe</button>
+	<p class="mchimp-errmessage" style="display: none;"></p>
+	<p class="mchimp-sucmessage" style="display: none;"></p>
+	</form>
+	</div>
+	</div>
+	<div class="col-lg-3 col-md-6">
+	<div class="f_widget about-widget pl_70 wow fadeInLeft" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInLeft;">
+	<br> <h3 class="f-title f_600 t_color">Quick Links</h3>
+	<ul class="list-unstyled f_list">
+	
+	<li><a href="#">Home</a></li>
+	<li><a href="#">About Us</a></li>
+	<li><a href="#">Services</a></li>
+	<li><a href="#">Product</a></li>
+	<li><a href="#">Contact</a></li>
+	<li><a href="#"></a></li>
+	</ul>
+	</div>
+	</div>
+	<div class="col-lg-3 col-md-6">
+	<div class="f_widget social-widget pl_70 wow fadeInLeft" data-wow-delay="0.8s" style="visibility: visible; animation-delay: 0.8s; animation-name: fadeInLeft;">
+	<br> <h3 class="f-title f_600 t_color f_size_18">Ragesh Engineering</h3>
+	<div class="f_social_icon">
+	<a href="#" class="fab fa-facebook"></a>
+	<a href="#" class="fab fa-twitter"></a>
+	<a href="#" class="fab fa-linkedin"></a>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	<div class="footer_bg">
+	
+	</div>
+	</div>
+	<div class="footer_bottom">
+	<div class="container">
+	<div class="row align-items-center">
+	<div class="col-lg-6 col-sm-7">
+	<br><p class="mb-0 f_400">© Ragesh Engineering 2024 All rights reserved.</p>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</footer>
+	<!-- partial -->
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js'></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
